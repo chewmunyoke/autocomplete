@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  ::-webkit-scrollbar {
+    @apply w-2;
+  }
+  ::-webkit-scrollbar-track {
+    @apply rounded-md bg-slate-200 dark:bg-slate-600;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply rounded-md bg-slate-500 hover:bg-slate-600 dark:bg-slate-800 dark:hover:bg-slate-900;
+  }
+
+  .switch {
+    @apply relative h-5 w-10 cursor-pointer appearance-none rounded-full bg-slate-400 before:absolute before:-left-1 before:-top-0.5 before:inline-block before:size-6 before:translate-x-0 before:rounded-full before:border before:border-slate-200 before:bg-white before:shadow-md before:transition checked:before:translate-x-full focus:outline-none focus:before:border-cyan-400 focus:before:ring focus:before:ring-cyan-100 disabled:pointer-events-none disabled:opacity-50 motion-reduce:transition-none dark:bg-slate-600 dark:before:bg-slate-50 dark:before:shadow-none dark:focus:before:border-cyan-500 dark:focus:before:ring-cyan-300;
+  }
+}
+
+@layer utilities {
+  .with-focus-ring {
+    @apply border transition focus-within:border-cyan-400 focus-within:outline-none focus-within:ring focus-within:ring-cyan-100 motion-reduce:transition-none dark:focus-within:border-cyan-500 dark:focus-within:ring-cyan-300;
+  }
+}
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.listbox {
+  &--enter {
+    opacity: 0;
+  }
+
+  &--enter-active {
+    opacity: 1;
+    @media (prefers-reduced-motion: no-preference) {
+      transition: opacity 200ms;
+    }
+  }
+
+  &--exit {
+    opacity: 1;
+  }
+
+  &--exit-active {
+    opacity: 0;
+    @media (prefers-reduced-motion: no-preference) {
+      transition: opacity 200ms;
+    }
+  }
+}
